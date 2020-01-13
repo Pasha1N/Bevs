@@ -1,0 +1,61 @@
+﻿<Window x:Class="Bevs.View.WindowTimer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bevs.View"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="WindowTimer" Height="300" Width="250">
+    <Grid Background="#FF272C2C">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="132*"/>
+            <RowDefinition Height="111*"/>
+            <RowDefinition Height="26*"/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="63*" />
+                <RowDefinition Height="23*" />
+                <RowDefinition Height="120*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="26*"/>
+                <ColumnDefinition Width="95*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBox Height="24" Background="#FF272C2C" Grid.Column="1"
+                     BorderThickness="1" Foreground="#FFBBBABA" FontSize="17"
+                     TextAlignment="Center" HorizontalAlignment="Left" Grid.ColumnSpan="2" Width="140" />
+
+            <TextBlock Grid.Column="1"  VerticalAlignment="Center" Margin="141,0,0,0" Foreground="#FFBBBABA" FontSize="17" > :min</TextBlock>
+
+            <CheckBox IsChecked="{Binding Path=TurnOffPC, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" VerticalAlignment="Top" Height="16" Background="#FF272C2C" Grid.Column="1" Grid.RowSpan="2">
+                <Run Text="Turn off the computer?" Foreground="#FFBBBABA"/>
+            </CheckBox>
+            <Button Height="25" Width="100" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left"  Background="#FF272C2C" Foreground="#FFBBBABA">Turn off timer
+            </Button>
+            
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="39*" />
+                <RowDefinition Height="28*" />
+                <RowDefinition Height="44*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="110*"/>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="107*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Command="{Binding Path=BtnSetTimer}" Background="#FF272C2C" Width="90" Height="25" HorizontalAlignment="Right" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,1,24,1" >Set</Button>
+            <Button Command="{Binding Path=BtnCancel}" Background="#FF272C2C" Width="90" Height="25" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="2">Cancel</Button>
+
+        </Grid>
+
+
+    </Grid>
+</Window>
